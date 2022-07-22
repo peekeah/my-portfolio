@@ -1,14 +1,14 @@
 import React, { useState } from "react";
 import { useNavigate, NavLink, Link } from "react-router-dom";
+// import { HashLink, NavHashLink } from 'react-router-hash-link';
+// import { Link } from "react-scroll";
 import { Button, useMediaQuery, useTheme } from "@mui/material";
 import MenuIcon from "@mui/icons-material/Menu";
 import { NavbarDrawer } from "./NavbarDrawer";
 import { pages } from "../Constants";
 import "./Navbar.css";
-import * as Scroll from 'react-scroll';
 
 const Navbar = () => {
-  const [value, setValue] = useState(0);
   const [drawer, setDrawer] = useState(false);
 
   const theme = useTheme();
@@ -27,7 +27,7 @@ const Navbar = () => {
             <NavLink to="/">
               <span className="text-xl">Home</span>
             </NavLink>
-            <NavLink to="/about-me">
+            <NavLink to="/about">
               <span className="text-xl">About</span>
             </NavLink>
             <NavLink to="/projects">

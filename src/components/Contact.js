@@ -4,15 +4,9 @@ import { Formik, Form } from "formik";
 import MailIcon from "@mui/icons-material/Mail";
 import * as Yup from "yup";
 import "./Contact.css";
-import env from "react-dotenv";
-import emailjs from '@emailjs/browser';
+import emailjs from "@emailjs/browser";
 
 function Contact() {
-  // dotenv.config();
-  
-  // dotenv.config();
-  // const {SERVICE_ID, TEMPLATE_ID, PUBLIC_KEY}= process.env;
-  // console.log(process.env);
   const initialValues = {
     userName: "",
     userEmail: "",
@@ -39,12 +33,21 @@ function Contact() {
   const handleSubmit = async (values, { resetForm }) => {
     try {
       console.log(values);
-      emailjs.sendForm('service_xbhyqmr', 'template_o82twxm', form.current, 'ML47rnvb2HKHcvq8v')
-      .then((result) => {
-          console.log(result.text);
-      }, (error) => {
-          console.log(error.text);
-      });
+      emailjs
+        .sendForm(
+          "service_xbhyqmr",
+          "template_o82twxm",
+          form.current,
+          "ML47rnvb2HKHcvq8v"
+        )
+        .then(
+          (result) => {
+            console.log(result.text);
+          },
+          (error) => {
+            console.log(error.text);
+          }
+        );
       resetForm();
       alert("Successfully submitted!");
     } catch (err) {
@@ -63,6 +66,8 @@ function Contact() {
     //   <div className="right">right container</div>
     // </div>
     // <div className="contact w-2/3 mt-3 mx-auto bg-slate-300">
+
+    // </div>
 
     <Formik
       initialValues={initialValues}
@@ -159,8 +164,6 @@ function Contact() {
         </Form>
       )}
     </Formik>
-
-    // </div>
   );
 }
 
