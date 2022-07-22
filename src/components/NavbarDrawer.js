@@ -10,33 +10,36 @@ import CloseIcon from "@mui/icons-material/Close";
 
 export const NavbarDrawer = ({ drawer, setDrawer, pages }) => {
   return (
-    <>
-      <React.Fragment>
-        <Drawer
-          anchor="right"
-          open={drawer}
-          onClose={() => setDrawer(false)}
-          onOpen={() => setDrawer(true)}
+    <React.Fragment>
+      <Drawer
+        anchor="right"
+        open={drawer}
+        onClose={() => setDrawer(false)}
+        onOpen={() => setDrawer(true)}
+      >
+        <div
+          className="cols-5 h-screen"
+          style={{ paddingTop: "10px", backgroundColor: "var(--tertiary)" }}
         >
-          <div style={{ marginTop: "10px", width: "8rem" }}>
-            <div style={{ padding: "10px 10px" }}>
-              <CloseIcon onClick={() => setDrawer(false)}/>
-            </div>
-            {pages.map((page, index) => (
-              <ListItemButton
-                component={Link}
-                to={page.url}
-                key={index}
-                onClick={() => setDrawer(false)}
-              >
-                <ListItemIcon>
-                  <ListItemText>{page.name}</ListItemText>
-                </ListItemIcon>
-              </ListItemButton>
-            ))}
+          <div style={{ padding: "10px 10px" }}>
+            <CloseIcon onClick={() => setDrawer(false)} />
           </div>
-        </Drawer>
-      </React.Fragment>
-    </>
+          {pages.map((page, index) => (
+            <ListItemButton
+              component={Link}
+              to={page.url}
+              key={index}
+              onClick={() => setDrawer(false)}
+            >
+              <ListItemIcon>
+                <ListItemText>
+                  <span className="text-xl">{page.name}</span>
+                </ListItemText>
+              </ListItemIcon>
+            </ListItemButton>
+          ))}
+        </div>
+      </Drawer>
+    </React.Fragment>
   );
 };

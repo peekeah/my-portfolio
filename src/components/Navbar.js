@@ -1,110 +1,58 @@
 import React, { useState } from "react";
-import { useNavigate, Link } from "react-router-dom";
-import {
-  AppBar,
-  Toolbar,
-  Typography,
-  IconButton,
-  Tabs,
-  Tab,
-  useMediaQuery,
-  Box,
-  useTheme,
-  Button,
-  useScrollTrigger,
-  Slide,
-} from "@mui/material";
+import { useNavigate, NavLink, Link } from "react-router-dom";
+import { Button, useMediaQuery, useTheme } from "@mui/material";
 import MenuIcon from "@mui/icons-material/Menu";
 import { NavbarDrawer } from "./NavbarDrawer";
 import { pages } from "../Constants";
-
-// function a11yProps(index: number) {
-//   return {
-//     id: `simple-tab-${index}`,
-//     'aria-controls': `simple-tabpanel-${index}`,
-//   };
-// }
+import "./Navbar.css";
+import * as Scroll from 'react-scroll';
 
 const Navbar = () => {
-  const trigger = useScrollTrigger();
-
   const [value, setValue] = useState(0);
   const [drawer, setDrawer] = useState(false);
 
   const theme = useTheme();
-  const isMatched = useMediaQuery(theme.breakpoints.down("md"));
+  const isMatched = useMediaQuery(theme.breakpoints.up("md"));
 
   return (
-    <>
-      {/* <Slide
-        appear={false}
-        direction="down"
-        in={!trigger}
-        easing={{ easeIn: "2s", easeOut: "2s" }}
-      > */}
-      {/* <Box sx={{ flexGrow: 1 }}> */}
-      <AppBar
-        position="fixed"
-        style={{
-          backgroundColor: "#322e2f",
-        }}
-      >
-        <Toolbar>
-          <Typography
-            variant="h6"
-            component="div"
-            sx={{ flexGrow: 1, padding: 2 }}
-          >
-            PRANAY KOTHARI
-          </Typography>
-          {isMatched ? (
-            <>
-              <Button
-                // className="btn btn-primary"
-                onClick={() => setDrawer(!drawer)}
-              >
-                <MenuIcon sx={{ color: "white" }} />
-              </Button>
-
+    <div className="container w-10/12 mx-auto items-center">
+      <div className="navbar flex justify-between h-14">
+        <div className="left flex justify-center items-center">
+          <Link to="/">
+            <div className="logo cursor-pointer text-3xl">PK</div>
+          </Link>
+        </div>
+        {isMatched ? (
+          <div className="right flex">
+            <NavLink to="/">
+              <span className="text-xl">Home</span>
+            </NavLink>
+            <NavLink to="/about-me">
+              <span className="text-xl">About</span>
+            </NavLink>
+            <NavLink to="/projects">
+              <span className="text-xl">Projects</span>
+            </NavLink>
+            <NavLink to="/contact">
+              <span className="text-xl">Contact</span>
+            </NavLink>
+          </div>
+        ) : (
+          <div className="right flex items-center">
+            <Button onClick={() => setDrawer(!drawer)}>
+              <MenuIcon sx={{ color: "var(--primary)" }} />
+            </Button>
+            {drawer ? (
               <NavbarDrawer
                 pages={pages}
                 drawer={drawer}
                 setDrawer={setDrawer}
               />
-            </>
-          ) : (
-            <>
-              <Box sx={{ borderBottom: 1, borderColor: "divider" }}>
-                <Tabs
-                  value={value}
-                  textColor="inherit"
-                  onChange={(e, value) => setValue(value)}
-                  aria-label="basic tabs example"
-                  indicatorColor="secondary"
-                  TabIndicatorProps={{
-                    style: {
-                      display: "flex",
-                    },
-                  }}
-                >
-                  {pages.map((page, id) => (
-                    <Tab
-                      key={id}
-                      label={page.name}
-                      component={Link}
-                      to={page.url}
-                      // {...a11yProps(id)}
-                    />
-                  ))}
-                </Tabs>
-              </Box>
-            </>
-          )}
-        </Toolbar>
-      </AppBar>
-      {/* </Box> */}
-      {/* </Slide> */}
-    </>
+            ) : null}
+          </div>
+        )}
+      </div>
+    </div>
   );
 };
 

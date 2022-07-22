@@ -1,0 +1,22 @@
+/* main color scheme */
+:root{
+    --primary: #EF0D50;
+    --secondary: #E5BACE;
+    --tertiary: #E1F2F7;
+    --accent: magenta; 
+    --light:#EB3A70;
+    --white: #ffffff;
+    --black: #000000;
+}
+
+/* :root{
+    --primary: #D34C26;
+    --secondary: #053220;
+    --tertiary: #ADCCC7
+    ; */
+    /* --tertiary: #E1F2F7; */
+    /* --accent: magenta; */
+    /* --light:#EB3A70;
+    --white: #ffffff;
+    --black: #000000;
+} */
