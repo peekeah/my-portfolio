@@ -1,5 +1,4 @@
 import React from "react";
-import blackBg from "../assets/blackBgLines.jpg";
 import ParticlesBg from "./ParticlesBg";
 const styles = {
   bgImg: {

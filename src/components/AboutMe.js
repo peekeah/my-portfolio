@@ -43,10 +43,7 @@ export default function AboutMe() {
         </h1>
         {
           <div className="flex justify-center">
-            <motion.div
-              className="flex flex-wrap mt-4 justify-center sm:justify-between"
-              // style={{ marginTop: "5rem" }}
-            >
+            <motion.div className="flex flex-wrap mt-4 justify-center sm:justify-between">
               {techStack.map((el, index) => (
                 <motion.div
                   initial="hidden"

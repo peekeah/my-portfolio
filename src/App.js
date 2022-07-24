@@ -5,11 +5,8 @@ import AboutMe from "./components/AboutMe";
 import Contact from "./components/Contact";
 import Navbar from "./components/Navbar";
 import Projects from "./components/Projects";
-import { Resume } from "./components/Resume";
-import Skills from "./components/Skills";
 import Home from "./components/Home";
 import ParticlesBg from "./components/ParticlesBg";
-import Footer from "./components/Footer";
 
 function App() {
   return (
@@ -18,13 +15,10 @@ function App() {
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/about" element={<AboutMe />} />
-        <Route path="/resume" element={<Resume />} />
-        <Route path="/skills" element={<Skills />} />
         <Route path="/projects" element={<Projects />} />
         <Route path="/contact" element={<Contact />} />
         <Route path="/bg" element={<ParticlesBg />} />
       </Routes>
-      {/* <Footer /> */}
     </BrowserRouter>
   );
 }

@@ -1,7 +1,5 @@
 import React, { useState } from "react";
-import { useNavigate, NavLink, Link } from "react-router-dom";
-// import { HashLink, NavHashLink } from 'react-router-hash-link';
-// import { Link } from "react-scroll";
+import { NavLink, Link } from "react-router-dom";
 import { Button, useMediaQuery, useTheme } from "@mui/material";
 import MenuIcon from "@mui/icons-material/Menu";
 import { NavbarDrawer } from "./NavbarDrawer";
@@ -24,23 +22,16 @@ const Navbar = () => {
         </div>
         {isMatched ? (
           <div className="right flex">
-            <NavLink to="/">
-              <span className="text-xl">Home</span>
-            </NavLink>
-            <NavLink to="/about">
-              <span className="text-xl">About</span>
-            </NavLink>
-            <NavLink to="/projects">
-              <span className="text-xl">Projects</span>
-            </NavLink>
-            <NavLink to="/contact">
-              <span className="text-xl">Contact</span>
-            </NavLink>
+            {pages.map((item, id) => (
+              <NavLink key={id} to={item.url}>
+                <span className="text-xl">{item.name}</span>
+              </NavLink>
+            ))}
           </div>
         ) : (
           <div className="right flex items-center">
             <Button onClick={() => setDrawer(!drawer)}>
-              <MenuIcon sx={{ color: "var(--primary)" }} />
+              <MenuIcon fontSize="large" sx={{ color: "var(--primary)" }} />
             </Button>
             {drawer ? (
               <NavbarDrawer
