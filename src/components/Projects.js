@@ -15,13 +15,14 @@ const Projects = () => {
             <div
               className="card-wrapper mx-auto my-3 flex justify-center"
               key={index}
+              
             >
-              <div className="bg-gray-50 md:m-4 mx-2 mt-6 rounded-lg">
+              <div className="flex flex-col justify-between bg-gray-50 md:m-4 mx-2 mt-6 rounded-lg"> 
                 <div className="px-6 py-4">
                   <div className="font-bold text-xl mb-2">{item.title}</div>
                   <p className="text-gray-700 text-base">{item.description}</p>
                 </div>
-                <div className="mx-5 mb-5 flex space-x-3">
+                <div className="buttons mx-5 mb-5 space-x-3">
                   <a href={item.github} target="_blank">
                     <button className="bg-gray-300 hover:bg-gray-400 text-gray-800 font-bold py-2 px-4 rounded-l">
                       GitHub

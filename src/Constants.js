@@ -121,17 +121,17 @@ export const projects = [
       "An app designed to track income and expense. Built using React in Frontend and MongoDB in Backend.",
   },
   {
-    title: "Library Management App",
-    github: "https://github.com/pranaykothari109/library-management",
-    netlify: "https://library-management-1.netlify.app/",
-    description:
-      "An app designed track books in library. Built using React in Frontend.",
-  },
-  {
     title: "Teacher Student Management App",
     github: "https://github.com/pranaykothari109/teacher-student-management",
     netlify: "https://teacher-student-management.netlify.app/",
     description:
       "An app assign teacher to students. Built using React in Frontend.",
+  },
+  {
+    title: "Library Management App",
+    github: "https://github.com/pranaykothari109/library-management",
+    netlify: "https://library-management-1.netlify.app/",
+    description:
+      "An app designed track books in library. Built using React in Frontend.",
   },
 ];

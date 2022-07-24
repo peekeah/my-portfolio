@@ -12,7 +12,7 @@ const styles = {
   },
   container: {
     display: "flex",
-    height: "100%",
+    height: "85%",
     alignItems: "center",
     justifyContent: "center",
     flexDirection: "column",

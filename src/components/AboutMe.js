@@ -4,7 +4,7 @@ import { motion } from "framer-motion";
 
 export default function AboutMe() {
   return (
-    <div className="w-10/12 container mx-auto mt-9">
+    <div className="w-10/12 sm:w-8/12 container mx-auto mt-9">
       <h1
         className="text-3xl sm:text-4xl lg:text-5xl my-3"
         style={{ color: "var(--primary)" }}
@@ -27,9 +27,9 @@ export default function AboutMe() {
             videos, learn new skills.
           </p>
         </div>
-        <div className="img-wrapper my-12 sm:my-0 sm:span-col-4 lg:flex-row-reverse">
+        <div className="hidden lg:block img-wrapper my-12 sm:my-0 sm:span-col-4 lg:flex-row-reverse">
           <div className="mx-auto w-10/12 sm:w-2/3 lg:w-1/2 xl:w-1/3">
-            <img src="https://cdn3.vectorstock.com/i/1000x1000/48/37/web-developer-design-vector-5884837.jpg"></img>
+            {/* <img src="https://cdn3.vectorstock.com/i/1000x1000/48/37/web-developer-design-vector-5884837.jpg"></img> */}
           </div>
         </div>
       </div>
@@ -42,11 +42,7 @@ export default function AboutMe() {
           Technologies I work with
         </h1>
         {
-          <div
-            className="flex justify-center"
-            s
-            // style={{backgroundColor: "var(--secondary)"}}
-          >
+          <div className="flex justify-center">
             <motion.div
               className="flex flex-wrap mt-4 justify-center sm:justify-between"
               // style={{ marginTop: "5rem" }}
