@@ -24,12 +24,12 @@ const Projects = () => {
                 <div className="buttons mx-5 mb-5 space-x-3">
                   <a href={item.github} target="_blank">
                     <button className="bg-gray-300 hover:bg-gray-400 text-gray-800 font-bold py-2 px-4 rounded-l">
-                      GitHub
+                      Code
                     </button>
                   </a>
                   <a href={item.netlify} target="_blank">
                     <button className="bg-gray-300 hover:bg-gray-400 text-gray-800 font-bold py-2 px-4 rounded-r">
-                      Netlify
+                      Demo
                     </button>
                   </a>
                 </div>
