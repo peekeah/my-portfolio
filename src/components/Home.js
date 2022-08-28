@@ -1,11 +1,6 @@
 import React from "react";
 import ParticlesBg from "./ParticlesBg";
 const styles = {
-  bgImg: {
-    backgroundImage: "url(../assets/Snowbg-01.jpg)",
-    height: "calc100",
-  },
-
   centerFit: {
     height: "calc(100vh - 3.5rem)",
   },
@@ -23,6 +18,13 @@ const styles = {
   textDescription: {
     padding: "5px 20px",
     color: "black",
+  },
+  resume: {
+    color: "var(--secondary)",
+    backgroundColor: "var(--primary)",
+    padding: "5px 20px",
+    borderRadius: "5px",
+
   },
 };
 
@@ -42,6 +44,14 @@ function Home() {
         <div className="text-xl md:text-3xl" style={styles.textDescription}>
           A Full stack developer
         </div>
+        <button className="resume opacity-80 hover:opacity-100" style={styles.resume}>
+          <a
+            href="https://drive.google.com/file/d/1_uVGUedTUGAU2YQXbGV9vGz7WbjUPf5g/view?usp=sharing"
+            target="_blank"
+          >
+            Resume
+          </a>
+        </button>
       </div>
       <ParticlesBg />
     </div>

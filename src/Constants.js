@@ -69,6 +69,7 @@ export const projects = [
     netlify: "https://inventory-management-01.netlify.app/",
     description:
       "A tool designed to manage and track all products in inventory. Built using React in Frontend and MongoDB in Backend.",
+    technologies: ["React", "MongoDB", "Express"],
   },
   {
     title: "Money Manager App",
@@ -76,6 +77,7 @@ export const projects = [
     netlify: "https://money-management-frontend.netlify.app/",
     description:
       "An app designed to track income and expense. Built using React in Frontend and MongoDB in Backend.",
+    technologies: ["React", "MongoDB", "Express"],
   },
   {
     title: "Teacher Student Management App",
@@ -83,6 +85,7 @@ export const projects = [
     netlify: "https://teacher-student-management.netlify.app/",
     description:
       "An app assign teacher to students. Built using React in Frontend.",
+    technologies: ["React"],
   },
   {
     title: "Library Management App",
@@ -90,5 +93,6 @@ export const projects = [
     netlify: "https://library-management-1.netlify.app/",
     description:
       "An app designed track books in library. Built using React in Frontend.",
+    technologies: ["React"],
   },
 ];
